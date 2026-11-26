@@ -173,7 +173,7 @@ function drive(){return`<p class="small muted">Last sync: ${E(lastSync)} · ${Ob
 
 /* ---------- Student identity, progress, roster and admin ---------- */
 
-/* ---------- Student Code: 01ASSH4ADLAON = class no. + section + last name ---------- */
+/* ---------- Student Code: 01ASSH4LASTNAME = class seq. no. + section + last name ---------- */
 const NC=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,''),
 mkCode=(no,sec,ln)=>String(no).padStart(2,'0')+NC(sec)+NC(ln);
 function parseRoster(txt,secIn){const sec=NC(secIn),rows=parseCSV(txt).filter(r=>r.some(c=>(c||'').trim()));if(!rows.length)return[];
