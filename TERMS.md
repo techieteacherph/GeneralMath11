@@ -1,7 +1,7 @@
 # Terms and Conditions
 
 **Explain Explore – Math @11 (Grade 11 General Mathematics Lab)**
-Molave Vocational Technical School · Teacher: Neljohn C. Parojinog
+Molave Vocational Technical School · Teacher: Neljohn
 Last updated: November 26, 2026
 
 Please read these terms before using the app. By signing in or continuing to use it, you agree to them. If you are a minor, a parent or guardian should read them with you.
@@ -16,7 +16,7 @@ The app is for learners enrolled in the class and for the teacher and school sta
 
 ## 3. Your Student Code
 
-- Your Student Code identifies you. Use **only your own code**.
+- Your Student Code identifies you. Use **only your own code**. Get the code from your teacher
 - Do not use another learner's code, share your device sign-in with someone to take your check-up, or pretend to be someone else.
 - If you think someone used your code, tell your teacher.
 
@@ -41,7 +41,7 @@ You agree **not** to:
 
 ## 6. Content and ownership
 
-- The app, its design, practice problems, lesson material and the **Explain Explore – Math @11** logo belong to the teacher (Neljohn C. Parojinog / Explain Explore with Mr. John) unless stated otherwise. All rights reserved.
+- The app, its design, practice problems, lesson material and the **Explain Explore – Math @11** logo belong to the teacher (Neljohn / Explain Explore with Mr. John) unless stated otherwise. All rights reserved.
 - DepEd competencies, school names and logos, and third-party videos or documents belong to their owners and are used for educational purposes.
 - You may use the app and its content for your own study. Please do not copy or distribute it beyond that without written permission.
 
@@ -70,4 +70,4 @@ These terms may be updated. The "Last updated" date above shows the current vers
 
 ## 12. Governing law and contact
 
-These terms are governed by the laws of the Republic of the Philippines. Questions: [email address] · Molave Vocational Technical School, [address].
+These terms are governed by the laws of the Republic of the Philippines. Questions: Contact any Math Teacher · Molave Vocational Technical School, 303797@deped.gov.ph.
