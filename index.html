@@ -39,7 +39,7 @@ html{-webkit-text-size-adjust:100%}button,select,input,summary{touch-action:mani
 <nav><div class="wrap" id="nav"></div></nav>
 <section id="adm" class="wrap hidden"></section>
 <main class="wrap" id="app"></main>
-<footer>Molave Vocational Technical School · Teacher: Neljohn C. Parojinog · Competencies follow the DepEd Grade 11 General Mathematics Budget of Work (updated April 8, 2026)</footer>
+<footer>Molave Vocational Technical School · Teacher: SSHS · Competencies follow the DepEd Grade 11 General Mathematics Budget of Work (updated April 8, 2026)</footer>
 <script>
 const $=s=>document.querySelector(s),LS=localStorage,R=x=>Math.round(x*100)/100;
 const J=(k,d)=>{try{const v=JSON.parse(LS.getItem('mvts11_'+k));return v==null?d:v}catch(e){return d}},S=(k,v)=>{try{LS.setItem('mvts11_'+k,JSON.stringify(v))}catch(e){msg('Storage full or blocked.')}};
@@ -101,7 +101,7 @@ const L=[
 ].map(a=>({id:a[0]+'-'+a[1],t:a[0],w:a[1],lab:a[2],dom:a[3],title:a[4],g:a[5],tg:a[6]}));
 const NQ=5,TN=['','First Term','Second Term','Third Term'];
 /* ---------- State and storage ---------- */
-const cfg=Object.assign({lsheet:'',ltab:'Lessons',sheet:'1oKtmcKtg6aR-fM123bvFcm12jHbvZNgEsc22_423PhA',sec:'Grade 11 – ASSH4',lib:'1wf39jIUtTp9TohmXVRWMH3sr8W03Nqoc',key:'',folder:'137wSVdwlkozRy8PmZAKld3MO2PKDkcbc',hook:'https://script.google.com/macros/s/AKfycbyB5zKvFwTZdK6Hb6L-ldXLH3EV-HUzMOOQqGoy_LhigDKZBFdOfLBItJW4cNV8Xql3/exec',pin:'MVTS2026'},J('cfg',{}));
+const cfg=Object.assign({lsheet:'',ltab:'Lessons',sheet:'1oKtmcKtg6aR-fM123bvFcm12jHbvZNgEsc22_423PhA',sec:'Grade 11 – SECTION4',lib:'1wf39jIUtTp9TohmXVRWMH3sr8W03Nqoc',key:'',folder:'137wSVdwlkozRy8PmZAKld3MO2PKDkcbc',hook:'https://script.google.com/macros/s/AKfycbyB5zKvFwTZdK6Hb6L-ldXLH3EV-HUzMOOQqGoy_LhigDKZBFdOfLBItJW4cNV8Xql3/exec',pin:'MVTS2026'},J('cfg',{}));
 if(!cfg.hook)cfg.hook='https://script.google.com/macros/s/AKfycbyB5zKvFwTZdK6Hb6L-ldXLH3EV-HUzMOOQqGoy_LhigDKZBFdOfLBItJW4cNV8Xql3/exec';
 let sp=J('sp',{}),sv=J('sv',{}),assign=J('assign',{}),vids=J('vids',{}),rvids=J('rvids',{}),xp=J('xp',{}),nicks=J('nicks',{}),board=J('board',[]),SR=0,roster=J('roster',[]),prof=J('prof',{name:'',key:'',sec:''}),prog=J('prog',{}),chk=J('chk',{}),recs=J('recs',[]),packs=J('packs',{}),files=J('files',[]),locks=J('locks',{});
 roster=roster.filter(x=>x.code);
