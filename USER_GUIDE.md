@@ -29,9 +29,9 @@ Your Student Code is made of three parts, written together with no spaces:
 |---|---|---|
 | Class number | Your number in the class list, 2 digits | `01` |
 | Section | Your section code | `ASSH4` |
-| Last name | Your last name, letters only | `ADLAON` |
+| Last name | Your last name, letters only | `DELACRUZ` |
 
-Example: **`01ASSH4ADLAON`**
+Example: **`01ASSH4DELACRUZ`**
 
 - Capital or small letters both work. Spaces and dashes are ignored.
 - Last names with spaces or accents are written plainly: *Dela Cruz* → `DELACRUZ`, *Peña* → `PENA`.
@@ -102,7 +102,7 @@ After unlocking you will see three tiles (**Students**, **Check-ups on this devi
 
 ```
 No.,Gender,Last Name,First Name
-1,M,Adlaon,Juan
+1,M,DELACRUZ,Juan
 2,F,Dela Cruz,Maria Luz
 ```
 
