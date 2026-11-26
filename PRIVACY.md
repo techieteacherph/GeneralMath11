@@ -1,7 +1,7 @@
 # Data Privacy Notice
 
-**Explain Explore – Math @11 (Grade 11 General Mathematics Lab)**
-Molave Vocational Technical School · Teacher: Neljohn C. Parojinog
+**Explain Explore – Math @11 (Grade 11 General Mathematics EXP^2)**
+Molave Vocational Technical School · Teacher: Sir Neljohn
 Last updated: November 26, 2026
 
 This notice explains what personal information the app collects, why, where it goes, how long it is kept and what your rights are. It is written to follow the **Data Privacy Act of 2012 (Republic Act No. 10173)** and its Implementing Rules and Regulations, and applicable DepEd policies. Learners are minors, so parents and guardians are encouraged to read it too.
@@ -10,8 +10,8 @@ This notice explains what personal information the app collects, why, where it g
 
 | Role | Contact |
 |---|---|
-| Personal Information Controller / Teacher | Neljohn C. Parojinog, Molave Vocational Technical School · [email address] |
-| School Data Protection Officer | [name] · [email address] |
+| Personal Information Controller / Teacher handling the student i.e. learner of the present class | Molave Vocational Technical School · 303797@deped.gov.ph |
+| School Data Protection Officer | MATH Teacher |
 
 ## 2. What we collect
 
@@ -114,4 +114,4 @@ We may update this notice when the app changes. The "Last updated" date will cha
 
 ## 11. Contact
 
-Questions or requests: [email address] · [phone or office] · Molave Vocational Technical School, [address].
+Questions or requests: 303797@deped.gov.ph · Molave Vocational Technical School, Molave Zaamboanga del sur.
