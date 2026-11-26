@@ -33,7 +33,7 @@ footer{background:#102744;color:#d9e8f8;padding:18px;text-align:center;font-size
 <nav><div class="wrap" id="nav"></div></nav>
 <section id="adm" class="wrap hidden"></section>
 <main class="wrap" id="app"></main>
-<footer>Molave Vocational Technical School · Teacher: Neljohn C. Parojinog · Competencies follow the DepEd Grade 11 General Mathematics Budget of Work (updated April 8, 2026)</footer>
+<footer>Molave Vocational Technical School · Teacher: SHS Math· Competencies follow the DepEd Grade 11 General Mathematics Budget of Work (updated April 8, 2026)</footer>
 <script>
 const $=s=>document.querySelector(s),LS=localStorage,R=x=>Math.round(x*100)/100;
 const J=(k,d)=>{try{const v=JSON.parse(LS.getItem('mvts11_'+k));return v==null?d:v}catch(e){return d}},S=(k,v)=>{try{LS.setItem('mvts11_'+k,JSON.stringify(v))}catch(e){msg('Storage full or blocked.')}};
@@ -95,7 +95,8 @@ const L=[
 ].map(a=>({id:a[0]+'-'+a[1],t:a[0],w:a[1],lab:a[2],dom:a[3],title:a[4],g:a[5],tg:a[6]}));
 const NQ=5,TN=['','First Term','Second Term','Third Term'];
 /* ---------- State and storage ---------- */
-const cfg=Object.assign({lsheet:'',ltab:'Lessons',sheet:'1oKtmcKtg6aR-fM123bvFcm12jHbvZNgEsc22_423PhA',sec:'Grade 11 – ASSH4',lib:'1wf39jIUtTp9TohmXVRWMH3sr8W03Nqoc',key:'',folder:'137wSVdwlkozRy8PmZAKld3MO2PKDkcbc',hook:'',pin:'MVTS2026'},J('cfg',{}));
+const cfg=Object.assign({lsheet:'',ltab:'Lessons',sheet:'1oKtmcKtg6aR-fM123bvFcm12jHbvZNgEsc22_423PhA',sec:'Grade 11 – ASSH4',lib:'1wf39jIUtTp9TohmXVRWMH3sr8W03Nqoc',key:'',folder:'137wSVdwlkozRy8PmZAKld3MO2PKDkcbc',hook:'https://script.google.com/macros/s/AKfycbyB5zKvFwTZdK6Hb6L-ldXLH3EV-HUzMOOQqGoy_LhigDKZBFdOfLBItJW4cNV8Xql3/exec',pin:'MVTS2026'},J('cfg',{}));
+if(!cfg.hook)cfg.hook='https://script.google.com/macros/s/AKfycbyB5zKvFwTZdK6Hb6L-ldXLH3EV-HUzMOOQqGoy_LhigDKZBFdOfLBItJW4cNV8Xql3/exec';
 let sp=J('sp',{}),sv=J('sv',{}),assign=J('assign',{}),vids=J('vids',{}),rvids=J('rvids',{}),xp=J('xp',{}),nicks=J('nicks',{}),board=J('board',[]),SR=0,roster=J('roster',[]),prof=J('prof',{name:'',key:'',sec:''}),prog=J('prog',{}),chk=J('chk',{}),recs=J('recs',[]),packs=J('packs',{}),files=J('files',[]),locks=J('locks',{});
 let V='home',TERM=1,W=null,item=null,tOpen=false,ADM=false,lastSync=J('sync','never');
 const byId=id=>L.find(e=>e.id===id);
@@ -134,11 +135,20 @@ function doPost(e){
   f.createFile('result_'+d.week+'_'+d.name.replace(/\\W+/g,'_')+'_'+Date.now()+'.json', JSON.stringify(d));
   return ContentService.createTextOutput('ok');
 }`;
-function drive(){return`<div class="panel"><h2>Google Drive data</h2><p>Last sync: ${E(lastSync)} · Saved lesson packs: ${Object.keys(packs).length} · Files: ${files.length}</p>
-<label for="fo">Drive folder ID</label><input id="fo" data-cfg="folder" value="${E(cfg.folder)}"><label for="sh">Video links Google Sheet ID</label><input id="sh" data-cfg="sheet" value="${E(cfg.sheet)}"><p class="small muted">Sheet format: column A = code (T1W1, T2W5…), columns B onward = YouTube links. Share it as “Anyone with the link – Viewer”. Students receive updates automatically when online.</p><p><button class="s" data-a="psheet">Sync sheet now</button></p><label for="ls">Lessons sheet ID (blank = same sheet)</label><input id="ls" data-cfg="lsheet" value="${E(cfg.lsheet)}"><label for="lt">Lessons tab name</label><input id="lt" data-cfg="ltab" value="${E(cfg.ltab)}"><p class="small muted">Tab columns: Code, Lesson title, Intro, Question, Answer, Unit, Worked solution. One row per question.</p><label for="lb">Course files folder ID</label><input id="lb" data-cfg="lib" value="${E(cfg.lib)}"><label for="ky">Google API key (Drive API enabled)</label><input id="ky" data-cfg="key" value="${E(cfg.key)}" placeholder="Paste once; saved on this device">
-<label for="hk">Apps Script web-app URL (for sending results)</label><input id="hk" data-cfg="hook" value="${E(cfg.hook)}" placeholder="https://script.google.com/macros/s/…/exec">
-<label for="pn">Teacher access code</label><input id="pn" data-cfg="pin" value="${E(cfg.pin)}"><p><button class="p" data-a="pull">Download lessons now</button><button class="s" data-a="push">Upload queued results</button><span class="fb" id="msg"></span></p></div>
-<div class="panel"><h3>How it works</h3><p class="small">Share the folder as “Anyone with the link — Viewer”. Put lesson packs in it named <b>T2W5.json</b> (term, week). Format:</p><pre>${E('{"title":"Room renovation","intro":"Short note for learners","items":[{"q":"Question text","a":42,"u":"m²","s":"Worked solution"}]}')}</pre><p class="small">Pack problems mix into the practice. Files starting with T2W5 appear under View Notes (.pptx as slides, .pdf as handouts). In the pack, add "video":"https://youtu.be/…", "slides":"…" or "pdf":"…" (a link or a list of links) for other sources. Everything downloaded stays saved for offline use. Results are queued offline and uploaded automatically once you are online.</p><details><summary><b>Apps Script for receiving results</b></summary><pre>${E(SCRIPT)}</pre></details></div>`}
+function drive(){return`<p class="small muted">Last sync: ${E(lastSync)} · ${Object.keys(packs).length} lesson pack(s) · ${files.length} file(s)</p>
+<label for="sh">Lessons and videos Google Sheet ID</label><input id="sh" data-cfg="sheet" value="${E(cfg.sheet)}">
+<p class="small muted">Share the sheet as “Anyone with the link – Viewer”. First tab: video links (column A = code like T2W5, then links). “${E(cfg.ltab)}” tab: Code, Lesson title, Intro, Question, Answer, Unit, Worked solution.</p>
+<label for="hk">Results web-app URL (Apps Script)</label><input id="hk" data-cfg="hook" value="${E(cfg.hook)}">
+<label for="pn">Teacher access code</label><input id="pn" data-cfg="pin" value="${E(cfg.pin)}">
+<label for="sc">Class section label</label><input id="sc" data-cfg="sec" value="${E(cfg.sec)}">
+<details><summary>More connections (optional)</summary>
+<label for="ls">Separate lessons sheet ID (blank = same sheet)</label><input id="ls" data-cfg="lsheet" value="${E(cfg.lsheet)}">
+<label for="lt">Lessons tab name</label><input id="lt" data-cfg="ltab" value="${E(cfg.ltab)}">
+<label for="fo">Results Drive folder ID</label><input id="fo" data-cfg="folder" value="${E(cfg.folder)}">
+<label for="lb">Course files folder ID</label><input id="lb" data-cfg="lib" value="${E(cfg.lib)}">
+<label for="ky">Google API key (only to list Drive files)</label><input id="ky" data-cfg="key" value="${E(cfg.key)}" placeholder="Optional">
+</details>
+<details><summary>Apps Script code for receiving results</summary><pre>${E(SCRIPT)}</pre></details>`}
 
 /* ---------- Student identity, progress, roster and admin ---------- */
 const me=()=>prof.key||'guest',K=id=>me()+'#'+id,pk=(k,id)=>{const p=prog[k+'#'+id];return p?Math.min(100,p.ok*20):0},pct=id=>pk(me(),id);
@@ -150,12 +160,14 @@ function parseCSV(t){const rows=[];let r=[],c='',q=0;t=t.replace(/^\uFEFF/,'');f
 function dl(rows,n){const c='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv;charset=utf-8'}));a.download=n;a.click()}
 function rexp(){dl([['Gender','Last Name','First Name','Mastery %','Check-ups done'],...roster.map(x=>{const s=stat(x.k);return[x.g,x.ln,x.fn,s.m,s.d]})],'MVTS_G11_Math_Roster_Progress.csv')}
 function admin(){if(!tOpen)return`<div class="panel"><h3>Teacher access</h3><label for="pin">Access code</label><input id="pin" type="password" autocomplete="off"><p><button class="p" data-a="unlock">Open</button><span class="fb" id="msg"></span></p></div>`;
-const un=recs.filter(r=>!r.sent).length;return`<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><h3 style="margin:0">Teacher tools</h3><button class="s" data-a="lockadm">Lock</button></div><span class="fb" id="msg"></span>
-<details open><summary><b>Roster and class progress</b></summary><p class="small muted">${roster.length} students. CSV columns: Gender, Last Name, First Name. Exports add Mastery % and Check-ups done.</p><label for="imp">Import roster (CSV)</label><input id="imp" type="file" accept=".csv,text/csv"><p><button class="p" data-a="rexp">Export roster + progress</button> <button class="s" data-a="lbexp">Export leaderboard.json</button></p>
-<div class="tw"><table><tr><th>Student</th><th style="min-width:130px">Progress</th><th>Check-ups</th></tr>${roster.map(x=>{const s=stat(x.k);return`<tr><td>${E(x.ln)}, ${E(x.fn)}</td><td><div class="bar"><i style="width:${s.m}%"></i></div><span class="small">${s.m}%</span></td><td>${s.d}/${L.length}</td></tr>`}).join('')||'<tr><td colspan="3">Import a roster to begin.</td></tr>'}</table></div><p class="small muted">Progress shown is from this device. Other devices report through Drive.</p></details>
-<details><summary><b>Check-up submissions (${recs.length}, ${un} waiting for Drive)</b></summary><div class="tw"><table><tr><th>Name</th><th>Lesson</th><th>Score</th><th>Drive</th></tr>${recs.map(r=>`<tr><td>${E(r.name)}</td><td>${E(r.title)}</td><td>${r.score}/${r.total}</td><td>${r.sent?'sent':'queued'}</td></tr>`).join('')||'<tr><td colspan="4">None yet.</td></tr>'}</table></div><button class="p" data-a="csv">Download results CSV</button><button class="s" data-a="print">Print</button></details>
-<details><summary><b>Link files and videos to lessons</b></summary>${linkTools()}</details><details><summary><b>Settings</b></summary><label for="sc">Class section label</label><input id="sc" data-cfg="sec" value="${E(cfg.sec)}"></details>
-<details><summary><b>Drive and sync</b></summary>${drive()}</details></div>`}
+const un=recs.filter(r=>!r.sent).length;return`<div class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><h3 style="margin:0">Teacher tools</h3><button class="s" data-a="lockadm">Lock</button></div>
+<div class="grid" style="margin:12px 0"><div class="tile"><b>${roster.length}</b>Students</div><div class="tile"><b>${recs.length}</b>Check-ups on this device</div><div class="tile"><b>${un}</b>Waiting to send</div></div>
+<p><button class="p" data-a="pull">Sync lessons</button><button class="s" data-a="push">Send results</button><button class="s" data-a="csv">Results CSV</button><button class="s" data-a="rexp">Class progress CSV</button></p><span class="fb" id="msg"></span>
+<details><summary><b>Class roster</b></summary><p class="small muted">CSV columns: Gender, Last Name, First Name.</p><label for="imp">Import roster (CSV)</label><input id="imp" type="file" accept=".csv,text/csv">
+<div class="tw"><table><tr><th>Student</th><th style="min-width:130px">Progress</th><th>Check-ups</th></tr>${roster.map(x=>{const s=stat(x.k);return`<tr><td>${E(x.ln)}, ${E(x.fn)}</td><td><div class="bar"><i style="width:${s.m}%"></i></div><span class="small">${s.m}%</span></td><td>${s.d}/${L.length}</td></tr>`}).join('')||'<tr><td colspan="3">Import a roster to begin.</td></tr>'}</table></div></details>
+<details><summary><b>Check-up results</b></summary><div class="tw"><table><tr><th>Name</th><th>Lesson</th><th>Score</th><th>Sent</th></tr>${recs.map(r=>`<tr><td>${E(r.name)}</td><td>${E(r.title)}</td><td>${r.score}/${r.total}</td><td>${r.sent?'yes':'queued'}</td></tr>`).join('')||'<tr><td colspan="4">None yet.</td></tr>'}</table></div><button class="s no-print" data-a="print">Print</button></details>
+<details><summary><b>Videos, slides and PDFs</b></summary>${linkTools()}</details>
+<details><summary><b>Settings</b></summary>${drive()}<p><button class="s" data-a="lbexp">Export leaderboard.json</button></p></details></div>`}
 
 /* ---------- View Notes: slides, handouts, videos ---------- */
 const yid=u=>{const m=/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/.exec(u||'');return m&&m[1]};
@@ -220,7 +232,7 @@ if(tx(1)&&!/^https?:/i.test(tx(1)))p.title=tx(1);if(tx(2)&&!/^https?:/i.test(tx(
 const isN=/^[₱\s]*-?[\d,]*\.?\d+\s*%?$/.test(a);p.items.push({q,a:isN?parseFloat(a.replace(/[₱,\s%]/g,'')):a,u:tx(5),s:tx(6)||'Ask your teacher for the worked solution.'});n++});
 sp=Object.fromEntries(Object.entries(o).filter(([k,v])=>v.items.length||v.title||v.intro));S('sp',sp);return n+' teacher question(s) synced.'}catch(x){return'Lessons tab not reachable.'}}
 /* ---------- Drive sync ---------- */
-async function pull(){if(!navigator.onLine)return msg('Offline — using the saved copy.');const sm=await pullSheet();if(!cfg.key)return msg((sm||'')+' Add an API key to also list Drive files.');
+async function pull(){if(!navigator.onLine)return msg('Offline — using the saved copy.');const sm=await pullSheet();if(!cfg.key)return msg(sm||'Add the Sheet ID in Settings and go online.');
 try{const u='https://www.googleapis.com/drive/v3/files',k='&key='+encodeURIComponent(cfg.key);msg('Syncing…');
 files=[];const q=[cfg.folder,cfg.lib].filter(Boolean);while(q.length&&files.length<600){const fo=q.shift(),l=await(await fetch(u+'?q='+encodeURIComponent(`'${fo}' in parents and trashed=false`)+'&pageSize=200&fields=files(id,name,mimeType)'+k)).json();if(l.error)throw Error(l.error.message);for(const x of l.files||[])x.mimeType==='application/vnd.google-apps.folder'?q.push(x.id):files.push(x)}let n=0;for(const f of files){if(/^links\.json$/i.test(f.name)){try{rvids=await(await fetch(u+'/'+f.id+'?alt=media'+k)).json();S('rvids',rvids)}catch(x){}}if(/^leaderboard\.json$/i.test(f.name)){try{board=(await(await fetch(u+'/'+f.id+'?alt=media'+k)).json()).rows||[];S('board',board)}catch(x){}}const m=/^T([123])W(\d+)(?:-\d+)?\.json$/i.exec(f.name);if(m){packs[m[1]+'-'+m[2]]=await(await fetch(u+'/'+f.id+'?alt=media'+k)).json();n++}}
 lastSync=new Date().toLocaleString();S('files',files);S('packs',packs);S('sync',lastSync);msg('Done: '+n+' lesson pack(s), '+files.length+' file(s).');}catch(x){msg('Sync failed: '+x.message)}}
